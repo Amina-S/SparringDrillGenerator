@@ -2,6 +2,12 @@ from tkinter import *
 from tkinter import ttk
 from random import randint
 
+import ctypes
+try:
+    ctypes.windll.shcore.SetProcessDpiAwareness(True)
+except:
+    pass
+
 class Generator():
 
     def __init__(self, master):
@@ -15,7 +21,7 @@ class Generator():
             if (randint(1,10) % 2 == 0):
                 master.message.config(text = 'switch')
                 master.update()
-                master.message.after(1900)         
+                master.message.after(1700)         
             if (drill == 1 or drill == 3):
                 master.message.config(text = drill)
                 master.update()
@@ -23,11 +29,12 @@ class Generator():
             elif (drill == 2 or drill == 5 or drill == 6):
                 master.message.config(text = drill)
                 master.update()
-                master.message.after(2800)
-             else:
+                master.message.after(2600)
+            else:
                 master.message.config(text = drill)
                 master.update()
-                master.message.after(3300)
+                master.message.after(3200)
+        master.message.config(text = 'over', foreground = 'dark red')
             
 def main():
     root = Tk()
