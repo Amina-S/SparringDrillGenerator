@@ -11,13 +11,16 @@ except:
 class Generator():
 
     def __init__(self, master):
-        master.geometry("1000x600")
-        master.config(background = "light yellow")
-        master.message = ttk.Label(master, font = ('Courier', 140, 'bold'), justify = CENTER, foreground = "dark green", background = "light yellow")
+        #master.geometry("1000x600")
+        master.config(background = "dark blue")
+        master.state('zoomed')
+        master.message = ttk.Label(master, font = ('Courier', 140, 'bold'), justify = CENTER, foreground = "white", background = "light yellow")
         master.message.pack()
+        master.message.config(text = 'starting...')
         master.update()
+        master.message.after(3000)
         for i in range (50):
-            drill = randint(1, 8) 
+            drill = randint(1, 18) 
             if (randint(1,10) % 2 == 0):
                 master.message.config(text = 'switch')
                 master.update()
@@ -26,7 +29,7 @@ class Generator():
                 master.message.config(text = drill)
                 master.update()
                 master.message.after(3800)
-            elif (drill == 2 or drill == 5 or drill == 6):
+            elif (drill == 2 or drill == 5 or drill == 6 or drill == 9 or drill == 10 or drill = 11):
                 master.message.config(text = drill)
                 master.update()
                 master.message.after(2600)
