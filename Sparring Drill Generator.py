@@ -14,7 +14,7 @@ class Generator():
         #master.geometry("1000x600")
         master.config(background = "dark blue")
         master.state('zoomed')
-        master.message = ttk.Label(master, font = ('Courier', 140, 'bold'), justify = CENTER, foreground = "white", background = "light yellow")
+        master.message = ttk.Label(master, font = ('Courier', 140, 'bold'), justify = CENTER, foreground = "white", background = "dark blue")
         master.message.pack()
         master.message.config(text = 'starting...')
         master.update()
@@ -28,15 +28,15 @@ class Generator():
             if (drill == 1 or drill == 3):
                 master.message.config(text = drill)
                 master.update()
-                master.message.after(3800)
-            elif (drill == 2 or drill == 5 or drill == 6 or drill == 9 or drill == 10 or drill = 11):
+                master.message.after(3600)
+            elif (drill == 2 or drill == 5 or drill == 6 or drill == 9 or drill == 10 or drill == 11):
                 master.message.config(text = drill)
                 master.update()
-                master.message.after(2600)
+                master.message.after(2500)
             else:
                 master.message.config(text = drill)
                 master.update()
-                master.message.after(3200)
+                master.message.after(3000)
         master.message.config(text = 'over', foreground = 'dark red')
             
 def main():
